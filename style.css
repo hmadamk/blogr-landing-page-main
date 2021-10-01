@@ -14,6 +14,21 @@
 	--linear1 : linear-gradient(to right,hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 	--linear2 : linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
 }
+a:hover{
+	transform:rotateX(90deg);
+}
+::-webkit-Scrollbar{
+	width:5px;
+}
+::-webkit-Scrollbar-thumb{
+	background:var(--Light-red);
+}
+@supports (Scrollbar-color: red blue){
+	*{
+		Scrollbar-color:var(--Light-red) #fff;
+		Scrollbar-width:thin;
+	}
+}
 a{
 	text-decoration:none;
 	color:#fff;
@@ -21,9 +36,11 @@ a{
 .hide .drop-down{
 	display:none !important;
 }
-html{overflow-x:hidden;}
 body{
 	margin:0;
+	max-width:1400px;
+	overflow-x:hidden;
+	margin-inline:auto;
 }
 .container{
 	display:grid;
@@ -236,8 +253,7 @@ header{
 		display:block;
 		margin-left:0rem;
 		font-size:1.25rem;
-		margin-top:2rem;
-		margin-bottom:2rem;
+		margin-block:2rem;
 		font-weight:bold;
 	}
 	a{color:var(--Verydarkblue);}
@@ -258,13 +274,11 @@ header{
 		opacity:.8;
 	}
 	.drop-down ul li{
-		margin-top:2rem;
-		margin-bottom:2rem;
+		margin-block:2rem;
 	}
 	.head .log{
 		margin:auto;
-		margin-top:2rem;
-		margin-bottom:2rem;
+		margin-block:2rem;
 	}
 	.head .log span{
 		font-size:1.25rem;
@@ -414,9 +428,6 @@ header{
 		grid-column-gap:5vw;
 		grid-template-columns:1fr 1fr
 	}
-	.content .phone{
-		
-	}
 	.content .phone img{
 		width:min(100%,500px);
 		margin-inline:auto;
@@ -561,8 +572,7 @@ footer ul{
 	margin:0;
 }
 footer h3{
-	margin-bottom:2rem;
-	margin-top:2rem;
+	margin-block:2rem;
 }
 footer li {
 	margin-top:1rem;
