@@ -38,7 +38,7 @@ a{
 }
 body{
 	margin:0;
-	max-width:1440px;
+	max-width:1400px;
 	overflow-x:hidden;
 	margin-inline:auto;
 }
@@ -62,7 +62,7 @@ button{
 header{
 	background-image: url(images/bg-pattern-intro.svg) , var(--linear1);
 	background-position: 30% 50%;
-	background-size:min(200vw,2800px),100vw;
+	background-size:200vw,100vw;
 	background-repeat: no-repeat;
 	color:#fff;
 	border-radius:0 0 0 10rem;
@@ -190,27 +190,9 @@ header{
   display:flex;
   align-items:center;
   height:24px;
+  margin-top:-10px;
 }
-.control span,
-.control span:before,
-.control span:after{
-  background:#fff;
-  width:2em;
-  display:block;
-  height:2px;
-  position:relative;
-}
-.control span:before,
-.control span:after{
-  content:'';
-  position:absolute;
-}
-.control span:before{
-  bottom:9px;
-}
-.control span:after{
-  top:9px;
-}
+.white{stroke:#fff;}
 /* Small Sizes handdle */
 @media (min-width:770px){
 	.visible-xs{
