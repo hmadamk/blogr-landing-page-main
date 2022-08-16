@@ -2,15 +2,15 @@ document.querySelectorAll('.head ul li').forEach(a => {
 	a.addEventListener('click', function () {
 		if (!this.classList.contains('hide')) {
 			this.classList.add('hide')
-		} else {
-			document.querySelectorAll('.head ul li').forEach(b => {
-				b.classList.add('hide')
-			})
-			this.classList.toggle('hide');
+			console.log("how");
 		}
+		document.querySelectorAll('.head ul li').forEach(b => {
+			b.classList.add('hide')
+		})
+		this.classList.toggle('hide');
 	})
 })
-document.querySelector('.control').onclick = function(){
+document.querySelector('.control').onclick = function () {
 	document.querySelector('.nav').classList.toggle('hide-xs');
 }
 
@@ -22,15 +22,29 @@ const lines = [line_one, line_two, line_three];
 const tlm = new TimelineMax({});
 const toggleMenu = new TimelineMax({ paused: true, reversed: true });
 toggleMenu
-    .to(line_two, .25, { scaleX: 0, transformOrigin: "50% 50%" }, 0)
-    .to(line_one, .25, { y: 12, ease: Power2.easeInOut }, 'slide')
-    .to(line_three, .25, { y: -12, ease: Power2.easeInOut }, 'slide')
-    .to(hamburgur, .5, { rotation: 360, ease: Power4.easeInOut })
-    .to(line_one, .25, { rotation: 45, transformOrigin: "50% 50%", ease: Power2.easeInOut }, 'cross')
-    .to(line_three, .25, { rotation: -45, transformOrigin: "50% 50%", ease: Power2.easeInOut }, 'cross')
+	.to(line_two, .25, { scaleX: 0, transformOrigin: "50% 50%" }, 0)
+	.to(line_one, .25, { y: 12, ease: Power2.easeInOut }, 'slide')
+	.to(line_three, .25, { y: -12, ease: Power2.easeInOut }, 'slide')
+	.to(hamburgur, .5, { rotation: 360, ease: Power4.easeInOut })
+	.to(line_one, .25, { rotation: 45, transformOrigin: "50% 50%", ease: Power2.easeInOut }, 'cross')
+	.to(line_three, .25, { rotation: -45, transformOrigin: "50% 50%", ease: Power2.easeInOut }, 'cross')
 
 hamburgur.addEventListener('click', _ => {
-    hamburgur.classList.toggle('js-x');
-    toggleMenu.reversed() ? toggleMenu.play() : toggleMenu.reverse();
+	hamburgur.classList.toggle('js-x');
+	toggleMenu.reversed() ? toggleMenu.play() : toggleMenu.reverse();
+})
+
+window.addEventListener('click', e => {
+	document.querySelectorAll('.head ul li').forEach(a => {
+		a.classList.add('hide')
+	})
+}, true)
+// for accessibility
+window.addEventListener('keyup', e => {
+	if (e.key == 'Escape') {
+		document.querySelectorAll('.head ul li').forEach(a => {
+			a.classList.add('hide')
+		})
+	}
 })
 //comment
