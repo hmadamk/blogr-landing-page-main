@@ -110,6 +110,16 @@ header {
 	position: relative;
 }
 
+.dropdown {
+	border: none;
+	background-color: transparent;
+	color: white;
+	padding: 0;
+	width: auto;
+	font-size: .875rem;
+	font-weight: 400;
+}
+
 .head ul li {
 	cursor: pointer;
 }

@@ -1,14 +1,20 @@
-document.querySelectorAll('.head ul li').forEach(a => {
-	a.addEventListener('click', function () {
-		if (!this.classList.contains('hide')) {
-			this.classList.add('hide')
-			console.log("how");
+const Elements = document.querySelectorAll('.head ul .anc')
+Elements.forEach(a => {
+	a.addEventListener('click', function (e) {
+		a.classList.toggle('hide')
+		next = a.nextElementSibling
+		while (next != null) {
+			next.classList.add('hide')
+			next = next.nextElementSibling
 		}
-		document.querySelectorAll('.head ul li').forEach(b => {
-			b.classList.add('hide')
-		})
-		this.classList.toggle('hide');
+		prev = a.previousElementSibling
+		while (prev != null) {
+			prev.classList.add('hide')
+			prev = prev.previousElementSibling
+		}
+		e.stopPropagation()
 	})
+
 })
 document.querySelector('.control').onclick = function () {
 	document.querySelector('.nav').classList.toggle('hide-xs');
@@ -38,7 +44,7 @@ window.addEventListener('click', e => {
 	document.querySelectorAll('.head ul li').forEach(a => {
 		a.classList.add('hide')
 	})
-}, true)
+}, false)
 // for accessibility
 window.addEventListener('keyup', e => {
 	if (e.key == 'Escape') {
